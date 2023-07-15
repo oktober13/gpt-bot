@@ -94,13 +94,13 @@ def handle_message(message):
     c = conn.cursor()
 
     # Получение контекста диалога из базы данных
-    c.execute("SELECT context FROM users WHERE id=?", (message.from_user.id,))
-    previous_context = c.fetchone()
+    # c.execute("SELECT context FROM users WHERE id=?", (message.from_user.id,))
+    # previous_context = c.fetchone()
 
-    if previous_context:
-        # Если контекст найден, использовать его для продолжения диалога
-        previous_question = previous_context[0]
-        question = f"{previous_question} {question}"
+    # if previous_context:
+    #     # Если контекст найден, использовать его для продолжения диалога
+    #     previous_question = previous_context[0]
+    #     question = f"{previous_question} {question}"
 
     # Подготовка запроса к ChatGPT
     chat_input = {
